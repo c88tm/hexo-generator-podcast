@@ -15,7 +15,8 @@
     <itunes:category text="{{ config.podcast.category }}">
       <itunes:category text="{{ config.podcast.category }}" />
     </itunes:category>
-    <itunes:explicit>no</itunes:explicit>
+    <itunes:explicit>{{ config.podcast.explicit }}</itunes:explicit>
+    <itunes:new-feed-url>{{ config.podcast.feed }}</itunes:new-feed-url>
     <language>{{ config.podcast.language }}</language>
     {% for post in podcast_posts %}
     <item>
