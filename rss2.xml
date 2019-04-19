@@ -4,7 +4,7 @@
     <atom:link href="https://typicaltalk.fm/podcast.xml" rel="self" type="application/rss+xml" />
     <title>{{ config.title | xml_escape }}</title>
     <link>{{ config.url }}/</link>
-    <itunes:subtitle></itunes:subtitle>
+    <itunes:subtitle>{{ config.subtitle | xml_escape }}</itunes:subtitle>
     <itunes:category text="{{ config.podcast.category }}" />
     <itunes:summary>{{ config.description | xml_escape }}</itunes:summary>
     <description>{{ config.description | xml_escape }}</description>

@@ -1,64 +1,78 @@
+
 # hexo-generator-podcast
-## version 2.0.0
-- Not compatible with 1.y.z! (Just to remind you that the configs are moved)
+
+## version 1.0.0
+
+forked from [owen8877](https://github.com/owen8877/hexo-generator-podcast)'s version 2.0.0
 
 ## install
-```
-npm install hexo-generator-podcast --save
+
+Add this repo in your dependencies, it should look like this:
+
+```json
+...
+
+  "dependencies": {
+    "hexo": "^3.7.0",
+
+    ...
+
+    "hexo-generator-podcast": "c88tm/hexo-generator-podcast#master"
+  }
+
+...
 ```
 
 ## _config.yml
+
 ```yaml
 # Site
-title: "YOUR TITLE"
-description: "YOUR DESCRIPTION"
-author: AUTHOR
-timezone: UTC
-default_thumb: "/images/logo.jpg"
+title: Title of your site/podcast
+subtitle: Subtitle of your site/podcast
+description: Description of Your site/podcast
+author: author # used for author and copyright column
+url: https://link/to/your/site
+default_thumb: "/link/to/image" # full path will be https://link/to/your/site/link/to/image
 
-#Podcast
+# Podcast
 podcast:
-    type: rss2
-    path: podcast.xml
-    limit: 20
-    hub:
-    url: https://URL/to/static/resources
-    description: 
-    language: zh-CN
-    copyright: "COPYRIGHT"
-    owner: ITUNES-OWNER
-    email: ITUNES-EMAIL
-    category: CATEGORY
+  type: rss2
+  path: podcast.xml
+  limit: 20
+  url: https://link/to/your/podcast
+  language: zh-TW
+  owner_name: owner_name
+  owner_email: owner@example.com
+  category: Comedy
+  explicit: clean
+  block: plz_not
 ```
 
-## post example(in source/_posts/)
-```
+## scaffold example
+
+add this in the scaffolds folder as podcast.md and run `hexo new podcast title`
+
+```yaml
 ---
 title: TITLE
-subtitle: SUBTITLE
-date: AUTO_GEN
-tags: 
-  - TAG
-category: podcast # must be exactly `podcast`
-media: /path/to/media # placed under //URL/to/static/resources/path/to/media
-image: /path/to/episode/image # same as above, but somehow itunes doesn't support episode image as it should do
-length: 6989--IN_BYTES
-type: audio/mpeg
-duration: XX:YY:AA
-chapter:
-  [
-    ["00:00:00.000", "Title 1"],
-    ["OTHER STARTTIME", "Another title"]
-  ]
+date: {{ date }}
+category: podcast
+media: path/to/episode/media # full link will be https://link/to/your/podcast/path/to/episode/media
+image: path/to/episode/image # full link will be https://link/to/your/podcast/path/to/episode/image
+length: 1234567 # in bytes
+mediatype: audio/mp3
+duration: HH:MM:SS # MM:SS or just in sec is also fine.
 ---
-Some Excerpt.
 
-<!--more-->
+Some summary used for subtitle
 
-Content.
+<!-- more -->
+
+More details and show notes.
 
 ```
 
 ## Other
+
 Please use rss2.
-And very very much thx to [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed).
+And very very much thx to [hexo-generator-feed](https://github.com/hexojs/hexo-generator-feed) and [Spec:-iTunes-Podcast-RSS](https://github.com/simplepie/simplepie-ng/wiki/Spec:-iTunes-Podcast-RSS#link).
