@@ -10,17 +10,17 @@ forked from [owen8877](https://github.com/owen8877/hexo-generator-podcast)'s ver
 Add this repo in your dependencies, it should look like this:
 
 ```json
-...
+//...
 
   "dependencies": {
     "hexo": "^3.7.0",
 
-    ...
+    //...
 
     "hexo-generator-podcast": "c88tm/hexo-generator-podcast#master"
   }
 
-...
+//...
 ```
 
 ## _config.yml
