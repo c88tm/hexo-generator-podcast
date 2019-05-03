@@ -29,13 +29,13 @@ Add this repo in your dependencies, it should look like this:
 # Site
 title: Title of your site/podcast
 subtitle: Subtitle of your site/podcast
-description: Description of Your site/podcast
 author: author # used for author and copyright column
 url: https://link/to/your/site
 default_thumb: "/link/to/image" # full path will be https://link/to/your/site/link/to/image
 
 # Podcast
 podcast:
+  description: Description of Your podcast
   type: rss2
   path: podcast.xml
   limit: 20

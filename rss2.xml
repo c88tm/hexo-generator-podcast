@@ -6,8 +6,8 @@
     <link>{{ config.url }}/</link>
     <itunes:subtitle>{{ config.subtitle | xml_escape }}</itunes:subtitle>
     <itunes:category text="{{ config.podcast.category }}" />
-    <itunes:summary>{{ config.description | xml_escape }}</itunes:summary>
-    <description>{{ config.description | xml_escape }}</description>
+    <itunes:summary>{{ config.podcast.description | xml_escape }}</itunes:summary>
+    <description>{{ config.podcast.description | xml_escape }}</description>
     <itunes:image href="{{ config.url }}{{ config.default_thumb }}" />
     <itunes:author>{{ config.author }}</itunes:author>
     <itunes:owner>
