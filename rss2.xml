@@ -32,7 +32,7 @@
       ]]></description>
       <itunes:author>{{ config.author }}</itunes:author>
       <itunes:image href="{{ config.podcast.url }}{{ post.image }}" />
-      <enclosure url="{{ config.podcast.url }}{{ post.media }}" length="{{ post.length }}" type="{{ post.mediatype }}"/>
+      <enclosure url="{{ config.podcast.media_url }}{{ post.media }}" length="{{ post.length }}" type="{{ post.mediatype }}"/>
       <link>{{ post.permalink }}</link>
       <guid>{{ post.permalink }}</guid>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
