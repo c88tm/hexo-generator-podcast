@@ -22,13 +22,13 @@
     <item>
       <title>{{ post.title | xml_escape}}</title>
       <itunes:subtitle>
-        {{ post.excerpt | strip_html | indent(8) | trim | xml_escape }}
+        {{ post.excerpt | remove_script | strip_html | indent(8) | trim | xml_escape }}
       </itunes:subtitle>
       <itunes:summary>
-        {{ post.excerpt | strip_html | indent(8) | trim | xml_escape }}
+        {{ post.excerpt | remove_script | strip_html | indent(8) | trim | xml_escape }}
       </itunes:summary>
       <description><![CDATA[
-        {{ post.content | make_cdata | indent(8) | trim | safe }}
+        {{ post.content | remove_script | make_cdata | indent(8) | trim | safe }}
       ]]></description>
       <itunes:author>{{ config.author }}</itunes:author>
       <itunes:image href="{{ config.podcast.url }}{{ post.image }}" />
